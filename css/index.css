@@ -1,0 +1,58 @@
+/* Transition pour les animations */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#navbar.scrolled {
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations de scroll */
+.collection-item, .product-item, .promo-box {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-in-out;
+}
+
+.collection-item.visible, 
+.product-item.visible, 
+.promo-box.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation des boutons */
+.blue-button, .white-button {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.blue-button.clicked,
+.white-button.clicked {
+    transform: scale(0.95);
+}
+
+/* Transition au hover */
+.blue-button:hover, .white-button:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
